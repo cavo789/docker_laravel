@@ -13,7 +13,7 @@ Easily create a new Dockerize laravel application by download a fresh Laravel in
 ```bash
 mkdir c:\projects\laravel_app
 cd c:\projects\laravel_app
-git clone 'https://github.com/cavo789/docker_laravel' .
+git clone https://github.com/cavo789/docker_laravel .
 curl -LJO https://github.com/laravel/laravel/archive/v8.5.9.zip
 powershell -command "Expand-Archive laravel-8.5.9.zip -DestinationPath . -Force"
 del v8.5.9.zip
