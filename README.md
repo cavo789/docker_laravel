@@ -10,20 +10,24 @@ Easily create a new Dockerize laravel application by download a fresh Laravel in
 2. Open a DOS Prompt Session
 3. Press <kbd>CTRL</kbd>+<kbd>C</kbd> to run them
 
+**Note**: The instructions below use the latest known version of Laravel at the time of writing this documentation. Go to [https://github.com/laravel/laravel/tags](https://github.com/laravel/laravel/tags) to see the latest version at the time you read this document.
+
 ```bash
 mkdir c:\projects\laravel_app
 cd c:\projects\laravel_app
 git clone https://github.com/cavo789/docker_laravel .
-curl -LJO https://github.com/laravel/laravel/archive/v8.5.9.zip
-powershell -command "Expand-Archive laravel-8.5.9.zip -DestinationPath . -Force"
-del v8.5.9.zip
+curl -LJO https://github.com/laravel/laravel/archive/v8.5.9.zip laravel.zip
+powershell -command "Expand-Archive laravel.zip -DestinationPath . -Force"
+del laravel.zip
+
+cd laravel-8.5.9
 
 copy .env.example .env
 
-# mkdir .docker
-# copy .\.docker\Dockerfile .docker\Dockerfile
-# copy .\.docker\vhost.conf .docker\vhost.conf
-copy .\.docker\docker-compose.yml .\docker-compose.yml
+mkdir .docker
+copy .\..\.docker\Dockerfile .docker\Dockerfile
+copy .\..\.docker\vhost.conf .docker\vhost.conf
+copy .\..\.docker\docker-compose.yml .\docker-compose.yml
 
 docker-compose up -d
 
