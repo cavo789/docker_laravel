@@ -9,6 +9,7 @@ services:
       - 8080:80
     volumes:
       - ./:/var/www/html
+
   db:
     image: mysql:5.7
     restart: always
@@ -19,4 +20,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
       MYSQL_ROOT_PASSWORD: ""
     volumes:
-      - ./db:/var/lib/mysql
+      - mydata:/var/lib/mysql
+
+volumes:
+  mydata:
